@@ -34,6 +34,7 @@ lockP = Lock()
 # -url http://ptl-81c01fdf-843a43d3.libcurl.so 
 # -v 
 # -tst 0.09
+# -charset loc.txt (be careful with this one)
 # To get a better grasp on it
 
 
