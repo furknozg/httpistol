@@ -6,6 +6,7 @@ import string
 from threading import Thread
 from threading import Lock
 from time import sleep
+from time import time
 import sys
 
 #URL = "http://ptl-81c01fdf-843a43d3.libcurl.so"
@@ -114,7 +115,7 @@ def read_wordlist(wordlist_loc):
 
 
 
-def main():
+def main(start_time):
     args = sys.argv
     try:
         motd_list = [
@@ -192,14 +193,14 @@ def main():
         print("Set")
         sleep(0.5)
 
-        run_attack(charset = wordlist,timing_ms = t, payload = payload, verbose = verbose, hitclause=hitclause)
+        run_attack(charset = wordlist,timing_ms = t, payload = payload, verbose = verbose, hitclause=hitclause,start_time=start_time)
     except:
         #print(sys.exc_info())
         print("")
         print("Goodbye")
 
 
-def run_attack(charset, timing_ms, payload, verbose, hitclause):
+def run_attack(charset, timing_ms, payload, verbose, hitclause,start_time):
     global HIT
     global ERRLIST
 
@@ -248,11 +249,14 @@ def run_attack(charset, timing_ms, payload, verbose, hitclause):
                 break 
         
         if not HIT:
+            print("Elapsed time: " + str(time() - start_time) + " seconds")
+
             if PASSWD != "":
-                print("Brute Force Candidate = " + PASSWD)
+                print("Brute Force Candidate = " + PASSWD)             
             else:
                 print("No Candidates (Try changing the wordlist if the specified key part is certain)")
-
+            
             exit(0)
 
-main()
+
+main(time())
