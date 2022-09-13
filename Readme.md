@@ -14,7 +14,7 @@ Purpose:
 
 Usage:
     
-    python3 httpistol.py & -url "https://example.com/" & -hitclause ">example<" & -payload "injectioncode?{payload}?injectioncode"
+    python3 httpistol.py -url "https://example.com/" -hitclause ">example<" -payload "injectioncode?{payload}?injectioncode"
 
 Optional parameters: 
 
