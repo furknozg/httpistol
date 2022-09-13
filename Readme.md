@@ -29,14 +29,17 @@ Parameters:
         The "?{}?" specifies the area where the wordlist will try to brute force the keyword
         This means specifying the payload area as "?{adm}?" will mean that the program will assume
         adm is the first 3 words of the payload (If keyword+charset[i] does not satisfy a hit for any i in len(charset), the program will exit)
+
 -tst (optional):
     Specifies the thread timing for each request thread. The shorter this is, the more request/seconds you have (use with caution).
     Warning: default value of -tst is 0.09, if your hardware can support faster thread openings you can shorten it. But nevertheless
     most remote servers will most probably block requests that are coming faster than 0.09 ms from one IP.
+
 -charset (optional):
     Specifies an override for the default charset (ascii letters and numbers and also "-")
     Create or use an existing wordlist location and put it in the parameter to use.
         
+
 Creating your own wordlists: 
             each newline specifies a new index so 5\n6\n7 is interpreted as ["5","6","7"].
     -v (optional):
