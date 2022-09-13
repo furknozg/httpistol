@@ -1,12 +1,13 @@
 from email import charset
 import urllib.request
 from urllib.error import HTTPError
-import string
 from threading import Thread
 from threading import Lock
 from time import sleep
 from time import time
+from random import randint
 import sys
+import string
 
 # AUTHOR: Furkan Özgültekin
 # Context: A brute force for url's with the intent of it being used for character based brute force
@@ -127,7 +128,7 @@ def main(start_time):
 ███████║░░░██║░░░░░░██║░░░██████╔╝██║╚█████╗░░░░██║░░░██║░░██║██║░░░░░
 ██╔══██║░░░██║░░░░░░██║░░░██╔═══╝░██║░╚═══██╗░░░██║░░░██║░░██║██║░░░░░
 ██║░░██║░░░██║░░░░░░██║░░░██║░░░░░██║██████╔╝░░░██║░░░╚█████╔╝███████╗""")
-        print(motd_list[1])
+        print(motd_list[randint(0,len(motd_list)-1)])
         
         wordlist = []
         t = -1
