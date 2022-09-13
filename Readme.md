@@ -29,9 +29,9 @@ Parameters:
     -payload (required):
         Specifies both the injection and the payload area in the request.
         Example: "/?search=admin'%26%26this.password.match(/^?{}?.*/)%00" (an example of a mongodb blind password brute force payload)
-            The "?{}?" specifies the area where the wordlist will try to brute force the keyword
-            This means specifying the payload area as "?{adm}?" will mean that the program will assume
-            adm is the first 3 words of the payload (If keyword+charset[i] does not satisfy a hit for any i in len(charset), the program will exit)
+        The "?{}?" specifies the area where the wordlist will try to brute force the keyword
+        This means specifying the payload area as "?{adm}?" will mean that the program will assume
+        adm is the first 3 words of the payload (If keyword+charset[i] does not satisfy a hit for any i in len(charset), the program will exit)
 
     -tst (optional):
         Specifies the thread timing for each request thread. The shorter this is, the more request/seconds you have (use with caution).
