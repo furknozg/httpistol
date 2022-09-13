@@ -190,6 +190,7 @@ def main(start_time):
 
         sleep(2)
         print("Set")
+        print("")
         sleep(0.5)
 
         run_attack(charset=wordlist,
