@@ -245,6 +245,9 @@ def run_attack(charset, timing_ms, payload, verbose, hitclause, start_time):
                 break
 
         if not HIT:
+            if len(ERRLIST) == len(CHARSET):
+                print("HTTP response code: 500 on all requests. Try increasing the -tst parameter if you think the firewall is blocking")
+                exit(1)
             print("Elapsed time: " + str(time() - start_time) + " seconds")
 
             if PASSWD != "":
