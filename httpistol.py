@@ -1,5 +1,4 @@
 from email import charset
-import socket
 import urllib.request
 from urllib.error import HTTPError
 import string
