@@ -198,8 +198,7 @@ def main(start_time):
                    verbose=verbose,
                    hitclause=hitclause,
                    start_time=start_time)
-    except:
-        #print(sys.exc_info())
+    except KeyboardInterrupt:
         print("")
         print("Goodbye")
 
