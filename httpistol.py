@@ -8,15 +8,15 @@ from time import sleep
 from time import time
 import sys
 
+global ERRLIST
+global PASSWD
+global HIT
+lockP = Lock() # For passwd and hit indicators
 
 URL = ""
 CHARSET = list("-" + string.ascii_lowercase + string.digits)  # default charset
-global ERRLIST
 ERRLIST = []
-global PASSWD
 PASSWD = ""
-global HIT
-lockP = Lock()
 
 # AUTHOR: Furkan Özgültekin
 # Context: A brute force for url's with the intent of it being used for character based brute force
@@ -48,8 +48,8 @@ def check(payload, key, verbose, hitclause):
         return regex_hit
     except HTTPError as err:
         if err.code == 500:
-            print("Request overload on" + key)
             global ERRLIST
+            print("Request overload on" + key)
             ERRLIST.append(key)
             return False
 
@@ -113,7 +113,10 @@ def read_wordlist(wordlist_loc):
 
 
 def main(start_time):
+    global PASSWD
+    global URL
     args = sys.argv
+    
     try:
         motd_list = [
             "HTTP injection scraper tool",
@@ -132,8 +135,7 @@ def main(start_time):
 ██╔══██║░░░██║░░░░░░██║░░░██╔═══╝░██║░╚═══██╗░░░██║░░░██║░░██║██║░░░░░
 ██║░░██║░░░██║░░░░░░██║░░░██║░░░░░██║██████╔╝░░░██║░░░╚█████╔╝███████╗""")
         print(motd_list[1])
-        global PASSWD
-        global URL
+        
         wordlist = []
         t = -1
         hitclause = ""
