@@ -13,9 +13,12 @@ Purpose:
     In the future there may be a module for standard injection attacks as well but for now that is on hold.
 
 Usage:
-    [python3 httpistol.py & -url "https://example.com/" & -hitclause ">example<" & -payload "injectioncode?{payload}?injectioncode"]
+    
+    python3 httpistol.py & -url "https://example.com/" & -hitclause ">example<" & -payload "injectioncode?{payload}?injectioncode"
 
-Optional parameters: [-v || -tst 0.1ms || -charset loc.txt]
+Optional parameters: 
+
+    -v || -tst 0.1ms || -charset loc.txt
 
 Parameters:
 
