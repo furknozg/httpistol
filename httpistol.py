@@ -9,7 +9,6 @@ from time import sleep
 from time import time
 import sys
 
-#URL = "http://ptl-81c01fdf-843a43d3.libcurl.so"
 
 URL = ""
 CHARSET = list("-" + string.ascii_lowercase + string.digits)  # default charset
