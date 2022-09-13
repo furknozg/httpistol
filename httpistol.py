@@ -8,6 +8,14 @@ from time import sleep
 from time import time
 import sys
 
+# AUTHOR: Furkan Özgültekin
+# Context: A brute force for url's with the intent of it being used for character based brute force
+# Dictionary brute force implementation may be intendend afterwards but right now it is only intended for characters.
+# Use with that discretion, thread timing and payload can be set manually to the owners liking.
+# Warning: the current code is optimal for blind injection attacks, 
+# therefore you may also need to know what the response returns on atrue clause. 
+# The threading moves on to the next index based on this "hitclause" specification.
+
 global ERRLIST
 global PASSWD
 global HIT
@@ -18,21 +26,6 @@ CHARSET = list("-" + string.ascii_lowercase + string.digits)  # default charset
 ERRLIST = []
 PASSWD = ""
 
-# AUTHOR: Furkan Özgültekin
-# Context: A brute force for url's with the intent of it being used for character based brute force
-# Dictionary brute force implementation may be intendend afterwards but right now it is ONLY INTENDED FOR CHARACTERS
-# use with that discretion, thread timing and payload can be set manually to the owners liking for any url.
-# Finding the right payload and specifying it is up to you but once you find it, we can execute.
-# Warning: the current code is optimal for blind injection attacks, therefore you may also need to know what the response returns on a
-# true clause. The threading moves on to the nex index based on this "hitclause" specification.
-# USAGE:
-# python3 httpistol.py -payload "/?search=admin'%26%26this.password.match(/^?{5}?.*/)%00"
-# -hitclause ">admin<"
-# -url http://ptl-81c01fdf-843a43d3.libcurl.so
-# -v
-# -tst 0.09
-# -charset loc.txt (be careful with this one)
-# To get a better grasp on it
 
 
 def check(payload, key, verbose, hitclause):
