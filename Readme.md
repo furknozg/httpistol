@@ -50,12 +50,9 @@ Parameters:
 
 
 Important notice: 
+    
     The program assumes the injection code you execute is true. So In the worst case you will send requests as much as your wordlist/charset has once and exit
-    
     The threading may be unstable at times, therefore the -tst parameter should only be upped if your hardware can handle it.
-    
     The wordlist can be long but the longer it is, the more thread unsafe it can be. On average the threads working at same time is between 4-5 (-tst 0.09)
-    
     But the program is not meant for phrases yet just characters, although feel free to test it out.
-    
     The use of this code is your own responsibility, I neither do or condone any malicious action taken by any of my code.
